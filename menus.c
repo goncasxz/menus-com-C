@@ -722,7 +722,7 @@ int check()
         }
         else
         {
-            printf("Opção inválida. Tente novamente.\n");
+            printf("Opcao invalida. Tente novamente.\n");
         }
     }
 }
@@ -740,6 +740,7 @@ int main()
         printf("\n[3] Sair");
         printf("\nDigite a opcao que deseja escolher (1 - 3): \n");
         scanf("%d", &choice);
+
         if (choice == 1)
         {
             int user = 0;
@@ -811,7 +812,8 @@ int main()
                     break;
 
                 default:
-                    printf("Opcao invalida");
+                    printf("\nOpcao invalida\n");
+                    fflush(stdin);
                 }
 
             } while (!exitFlag);
@@ -894,7 +896,8 @@ int main()
                     break;
 
                 default:
-                    printf("Opcao invalida");
+                    printf("\nOpcao invalida\n");
+                    fflush(stdin);
                 }
 
             } while (!exitFlag);
@@ -903,6 +906,12 @@ int main()
         {
             exitFlag2 = 1;
         }
+        else if (choice == 0)
+        {
+            printf("\nOpcao invalida tente novamente\n");
+            fflush(stdin);
+            continue;
+        }
         else
         {
             printf("\nOpcao invalida tente novamente\n");
@@ -910,5 +919,5 @@ int main()
         }
     } while (!exitFlag2);
     printf("\nOBRIGADO POR UTILIZAR O MENU");
-    return 0;
+    return 1;
 }
